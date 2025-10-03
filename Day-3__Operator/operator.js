@@ -49,4 +49,64 @@ console.log("x after x+=4 : ",x);
 // Used to compare two values and return a boolean result.
 
 
+console.log("Equal:",5 == "5") // true (loose equality, type coercion)
+console.log("Strict Equal:",5 == "5") // false (strict equality, no type coercion)
+console.log("Not Equal: ", 5 != 4) // true
+console.log("Greater then: ", 5 > 10)//false
+console.log("Less then: ", 5 < 10)// true
 
+// ---------------------------------------------
+
+// 4. Logical Operators
+// Used to combine multiple boolean expressions.
+
+let isTrue = true
+let isFalse = false
+
+
+console.log("AND: ", isTrue && isFalse) //false
+console.log("OR: ", isTrue || isFalse) // true
+console.log("NOT: ", !isTrue) // false
+
+// ---------------------------------------------
+
+// 5. Bitwise Operators
+// Operate on binary representations of numbers.
+
+let  d = 5 // 0101 in binary
+let e = 3 // 0011 in binary
+
+console.log("Bitwise AND: ",d & e)
+console.log("Bitwise OR: ",d | e)
+console.log("Bitwise XOR: ",d ^ e)
+
+// ---------------------------------------------
+
+// 6. Unary Operators
+// Operators with a single operand.
+
+let num = 5
+
+console.log("Unary Nagation: ", -num)// -5
+console.log("Incremente: ",++num)// 6(Pre-increment)
+console.log("Decremente: ",--num)// 4(Pre-Decrement)
+
+// ---------------------------------------------
+
+// 7. Miscellaneous Operators
+
+
+// Ternary Operator
+
+let age =20
+
+let canVote = age => 18 ? " Yes ": " No "
+console.log("Can Vote??",canVote)//yes
+
+//Typeof Operator
+
+
+
+
+console.log("Type of Dabhi: ",typeof "dabhi") // String
+console.log("Type of 22: ",typeof 22) // Number
