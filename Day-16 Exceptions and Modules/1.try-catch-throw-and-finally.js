@@ -26,36 +26,40 @@
 function checkAge() {
     const age = 15;
 
-    try {
-        if (age >= 18) {
+     if (age >= 18) {
             console.log("You are eligible for voting");
-        } else if (age < 18) { // should be < instead of <=
-            throw new Error("You are not eligible for voting");
-        }
-    } catch (error) {
-        console.log(error.message); // 'message' not 'massage'
-    }
+        } 
+
+    // try {
+    //     if (age >= 18) {
+    //         console.log("You are eligible for voting");
+    //     } else if (age < 18) { // should be < instead of <=
+    //         throw new Error("You are not eligible for voting");
+    //     }
+    // } catch (error) {
+    //     console.log(error.message); // 'message' not 'massage'
+    // }
 }
 
 checkAge();
 
 // another example with finally statements
 
-const isStudentPassed=()=>{
-    let marks =34;
+// const isStudentPassed=()=>{
+//     let marks =34;
 
-    try{
-        if(marks >= 35){
-         console.log("You have Passed This Examination");   
-        }else if(marks < 35){
-            throw new Error("You have Failed this Examination")
-        }
-    }
-    catch(error){
-        console.log(error.message);
-    }finally{
-        console.log("This will execute regardless of Result")
-    }
-}
+//     try{
+//         if(marks >= 35){
+//          console.log("You have Passed This Examination");   
+//         }else if(marks < 35){
+//             throw new Error("You have Failed this Examination")
+//         }
+//     }
+//     catch(error){
+//         console.log(error.message);
+//     }finally{
+//         console.log("This will execute regardless of Result")
+//     }
+// }
 
-isStudentPassed();
+// isStudentPassed();
