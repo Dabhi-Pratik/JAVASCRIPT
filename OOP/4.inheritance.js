@@ -4,15 +4,15 @@
 
 
 class College {
-    constructor(name, university, location) {
-        this.name = name;
-        this.university = university;
-        this.location = location;
-    }
+  constructor(name, university, location) {
+    this.name = name;
+    this.university = university;
+    this.location = location;
+  }
 
-    collegeFullDetails(){
-        return `Name:${this.name},University:${this.university},Location:${this.location}`
-    }
+  collegeFullDetails() {
+    return `Name:${this.name},University:${this.university},Location:${this.location}`
+  }
 }
 
 const collegeDetails = new College("ABC", "XYZ", "Downtown Area");

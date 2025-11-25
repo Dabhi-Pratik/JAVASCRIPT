@@ -4,31 +4,31 @@
 
 //Class representing a Car
 
-class Car{
+class Car {
     //Private property (not directly accessible)
-    #engineStatus ="off";
+    #engineStatus = "off";
 
     //Method to turn the engine on
-    startEngine(){
+    startEngine() {
         this.#engineStatus = "on";
         console.log("Engine Started");
     }
 
     //Method to turn the engine off
-    stopEngine(){
+    stopEngine() {
         this.#engineStatus = "off";
         console.log("Engine Stopped");
     }
 
     // Public method to get engine status (Abstraction: hides internal details)
-    getEngineStatus(){
+    getEngineStatus() {
         return this.#engineStatus;
     }
 }
 
 //creating a car object;
 
-const myCar=new Car();
+const myCar = new Car();
 
 // Using abstraction to interact with the car without worrying about the engine's internal details
 myCar.startEngine();
@@ -38,20 +38,20 @@ console.log(myCar.getEngineStatus()); //off
 
 // another example  light on off
 
-class TubLight{
-    #lightStatus ="on";
+class TubLight {
+    #lightStatus = "on";
 
-    startLight(){
-        this.#lightStatus ="on";
+    startLight() {
+        this.#lightStatus = "on";
         console.log("Light is on");
     }
 
-    turnOffLight(){
-        this.#lightStatus ="off";
+    turnOffLight() {
+        this.#lightStatus = "off";
         console.log("Light is OFF");
     }
 
-    getLightStatus(){
+    getLightStatus() {
         return this.#lightStatus();
     }
 }
