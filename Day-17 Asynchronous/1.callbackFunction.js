@@ -9,16 +9,16 @@
 
 // callback example
 
-function callbackFunc(result){
-    console.log("The total Sum of Number is: ",result)
+function callbackFunc(result) {
+  console.log("The total Sum of Number is: ", result)
 }
 
-function totalSumOfNumber(a,b,callbackFunc){
-    let result = a+b;
-    callbackFunc(result);
+function totalSumOfNumber(a, b, callbackFunc) {
+  let result = a + b;
+  callbackFunc(result);
 }
 
-totalSumOfNumber(14,10,callbackFunc);
+totalSumOfNumber(14, 10, callbackFunc);
 
 //**************************************************
 
@@ -33,14 +33,14 @@ totalSum(10, 20, (a) => {
 
 //
 
-function result() {
-  console.log(result);
+function result(value) {
+  console.log(value);
 }
 
 function total(a, b, callbackFunc) {
-  const result = a + b;
+  const res = a + b;
 
-  callbackFunc(result);
+  callbackFunc(res);
 }
 
 total(10, 20, result);
