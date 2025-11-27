@@ -9,24 +9,24 @@
 //millisecond - the time after which the function is executed 
 // The setTimeout() method returns an intervalID,which is a positive integer.
 
-const greeting = () =>{
-    console.log("Greeting function Op will print hello after 5 seconds");
-    setTimeout(()=>{
-        console.log("Hello")
-    },5000)
-}
+// const greeting = () => {
+//     console.log("Greeting function Op will print hello after 5 seconds");
+//     setTimeout(() => {
+//         console.log("Hello")
+//     }, 5000)
+// }
 
-greeting();
+// greeting();
 
 // Another Example
 
-const currentYear = () =>{
+const currentYear = () => {
     console.log("Checking Current Year");
 
-    setTimeout(() =>{
+    setTimeout(() => {
         let currentYear = new Date().getFullYear();
-        console.log("Current Year: ",currentYear)
-    },5000)
+        console.log("Current Year: ", currentYear)
+    }, 5000)
 }
 
 currentYear();

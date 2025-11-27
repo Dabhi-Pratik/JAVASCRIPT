@@ -10,15 +10,15 @@
 
 // example
 
-function currentTime(){
+function currentTime() {
     let Time = new Date().toLocaleTimeString();
 
-    console.log("Current time is : ",Time)
+    console.log("Current time is : ", Time)
 }
 
 // now i want to execute this function every given time
 
-setInterval(currentTime,1000);
+setInterval(currentTime, 1000);
 
 // In the above program, the setInterval() method calls the currentTime() function every 1000 milliseconds(1 second).
 

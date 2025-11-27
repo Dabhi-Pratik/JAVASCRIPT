@@ -8,18 +8,18 @@
 
 let intervalID;
 
-const currentTime = () =>{
+const currentTime = () => {
     const time = new Date().toLocaleTimeString()
-    console.log(time)
+    console.log("Current Time: ",time)
 }
 
-intervalID =setInterval(currentTime,2000)
+intervalID = setInterval(currentTime, 2000)
 
 //  This will run every after 2 second
 
 // now we want to stop that function execution after some time
 
-setTimeout(()=>{
+setTimeout(() => {
     clearInterval(intervalID);
     console.log("Time Stopped")
-},10000)
+}, 10000)
