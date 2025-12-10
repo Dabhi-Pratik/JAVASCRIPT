@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // when asynchronous function depend on more asynchronous (like in deeper) it goes
 
 // so if our first async function failed then after that depend async  function will never execute
@@ -88,4 +89,96 @@ payment(1500, (err, amount) => {
 //   }, 10000);
 // }
 
+=======
+// when asynchronous function depend on more asynchronous (like in deeper) it goes
+
+// so if our first async function failed then after that depend async  function will never execute
+
+// and when async function goes deeper code will growing horizontally instead of vertically
+
+// due to that code readability will decrease these are the main problem with call back hell
+
+// example of callback hell
+
+function payment(amount, callback) {
+    console.log(`Payment of ₹${amount} initiated.`);
+    setTimeout(() => {
+        if (amount > 0) {
+            console.log(`₹${amount} deducted.`)
+            callback(null, amount)
+        } else {
+            callback("Invalid payment amount.")
+        }
+    }, 1000)
+}
+
+function checkBalance(amount, callback) {
+    console.log("Checking Balance...................")
+    setTimeout(() => {
+        if (amount <= 2000) {
+            console.log("Sufficient Balance..")
+            callback(null, "Balance Verified")
+        } else {
+            callback("Insufficient Balance...!")
+        }
+    }, 1000)
+}
+
+function ifPaymentDone(amount, callback) {
+    console.log("Finalize Payment......");
+    setTimeout(() => {
+        console.log(`Payment of ₹${amount} completed SuccessFully....`);
+        callback(null, "Payment Done..")
+    }, 1000)
+}
+
+//Demonstrating  callback hell 
+payment(1500, (err, amount) => {
+    if (err) {
+        console.error(err);
+    } else {
+        checkBalance(amount, (err, status) => {
+            if (err) {
+                console.error(err);
+            } else {
+                ifPaymentDone(amount, (err, result) => {
+                    if (err) {
+                        console.error(err)
+                    } else {
+                        console.log(result)
+                    }
+                })
+            }
+        })
+    }
+})
+
+// Explanation of the Code
+// Asynchronous Functions:
+
+// payment(), checkBalance(), and ifPaymentDone() now use setTimeout to simulate asynchronous behavior.
+// Callbacks with Error Handling:
+
+// Each function accepts a callback that follows the common pattern of (err, result). If there's an error, it calls the callback with the error message; otherwise, it proceeds to the next function.
+// Demonstrating Callback Hell:
+
+// The nested structure shows how each function depends on the previous one, making the code grow horizontally and harder to read.
+
+// to overcome this problem we can use promise
+
+// function two(a) {
+//   console.log(a);
+// }
+
+// function one(cb) {
+//   const timer = setInterval(() => {
+//     cb("i am callback function");
+//   }, 1000);
+
+//   setTimeout(() => {
+//     clearInterval(timer);
+//   }, 10000);
+// }
+
+>>>>>>> f3536c4cfe5da1381202e93f9a8329dfbe0672a7
 // one(two);

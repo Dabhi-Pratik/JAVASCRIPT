@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -131,4 +132,139 @@
     <script src="script.js"></script>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM MANIPULATION</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            padding: 30px;
+
+        }
+
+        /* Paragraph styling */
+        #para,
+        .para2,
+        .style {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        /* H2 styling */
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        /* Button styling */
+        #btn {
+            padding: 10px 20px;
+            border: none;
+            background: #4a90e2;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #btn:hover {
+            background: #357abd;
+        }
+
+        form {
+            background: #ffffff;
+            padding: 25px;
+            width: 300px;
+            margin-top: 10px;
+            border-radius: 12px;
+
+            /* subtle shadow */
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
+
+            /* smooth animation */
+            transition: 0.3s ease;
+        }
+
+        form:hover {
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.18);
+        }
+
+        /* input field */
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d1d1;
+            border-radius: 8px;
+            outline: none;
+            font-size: 15px;
+            background: #f9f9f9;
+            transition: 0.2s;
+        }
+
+        input:focus {
+            border-color: #4a90e2;
+            background: white;
+            box-shadow: 0 0 4px rgba(74, 144, 226, 0.4);
+        }
+
+        /* submit button */
+        button[type="submit"] {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            background: #4a90e2;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button[type="submit"]:hover {
+            background: #357abd;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <p id="para">This is Id Paragraph</p>
+    <p class="para2">This is Class Paragraph</p>
+
+    <h3>This is querySelector Paragraph</h3>
+    <p class="style">This is class Paragraph for querySelector</p>
+
+    <h2 class="allQuery">This is Paragraph-1 for querySelector All</h2>
+    <h2 class="allQuery">This is Paragraph-2 for querySelector All</h2>
+
+    <!-- Event -->
+
+    <!-- Click Event -->
+
+    <button id="btn">Click</button>
+    <br>
+    <br>
+    <!-- submit Event -->
+
+    <form class="f" id="form">
+        <input type="text" id="task" placeholder="task">
+        <br>
+        <br>
+        <input type="text" id="description" placeholder="Description">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+>>>>>>> f3536c4cfe5da1381202e93f9a8329dfbe0672a7
 </html>

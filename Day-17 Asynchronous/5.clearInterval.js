@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // the program executes a block of code at every specified time interval. If you want to stop this function call, then you can use the clearInterval() method.
 
 // The syntax of clearInterval() method is:
@@ -22,4 +23,30 @@ intervalID = setInterval(currentTime, 2000)
 setTimeout(() => {
     clearInterval(intervalID);
     console.log("Time Stopped")
+=======
+// the program executes a block of code at every specified time interval. If you want to stop this function call, then you can use the clearInterval() method.
+
+// The syntax of clearInterval() method is:
+
+// clearInterval(intervalID);
+
+// example
+
+let intervalID;
+
+const currentTime = () => {
+    const time = new Date().toLocaleTimeString()
+    console.log("Current Time: ",time)
+}
+
+intervalID = setInterval(currentTime, 2000)
+
+//  This will run every after 2 second
+
+// now we want to stop that function execution after some time
+
+setTimeout(() => {
+    clearInterval(intervalID);
+    console.log("Time Stopped")
+>>>>>>> f3536c4cfe5da1381202e93f9a8329dfbe0672a7
 }, 10000)
