@@ -31,5 +31,5 @@ setInterval(nextClick = () =>{
 
     slide.src=img[index]
 
-},3000)
+},5000)
 

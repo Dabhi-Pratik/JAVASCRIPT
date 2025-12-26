@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        }
+
+        #btn {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 14px 28px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background: #ff9800;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        #btn:hover {
+            background: #ffb74d;
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        #img {
+            width: 400px;
+            height: 200px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+            /* smooth animation */
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img id="img" src="./img/p-1.jpg" alt="img">
+    <br>
+    <button id="btn">Click</button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
