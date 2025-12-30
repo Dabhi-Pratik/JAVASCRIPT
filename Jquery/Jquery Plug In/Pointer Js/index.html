@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Mouse Follower CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
+
+    <title>Mouse Follower Demo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        p {
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 14px 30px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 30px;
+            background: #ffd166;
+            color: #222;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ffe08a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Cursor text example -->
+        <h1 data-cursor-text="Hello 👋">Hover Me</h1>
+        <p>Hover text appears on cursor</p>
+
+        <!-- Cursor icon example -->
+        <button data-cursor-icon="arrow-left">Hover Button</button>
+        
+    </div>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+    <!-- Mouse Follower JS -->
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+
+    <script>
+        const cursor = new MouseFollower({
+            speed: 0.7
+        });
+    </script>
+
+</body>
+</html>
