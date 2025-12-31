@@ -9,69 +9,95 @@
 
 <style>
     label.error {
-        color: red;
+        color: #ff4d4d;
+        font-size: 18px;
+        margin-top: 4px;
     }
 
-      * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            background: url("https://c4.wallpaperflare.com/wallpaper/222/361/249/forms-shapes-light-color-wallpaper-preview.jpg") no-repeat center center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+    body {
+        background: url("https://c4.wallpaperflare.com/wallpaper/222/361/249/forms-shapes-light-color-wallpaper-preview.jpg") no-repeat center center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-        .box {
-            width: 350px;
-            padding: 25px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
+    .box {
+        width: 440px;
+        padding: 40px;
+        /* height: 800px; */
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
 
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 6px;
-            border-radius: 6px;
-            border:1px solid #d9d9d9;
-            background: rgba(255,255,255,0.6);
-        }
+    label {
+        display: block;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        color: #fff;
+        font-size: 25px;
+    }
 
-        .btn {
-            width: 100%;
-            margin-top: 20px;
-            padding: 10px;
-            background: #2d6ef6;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 6px;
+        border-radius: 10px;
+        border: 1px solid #d9d9d9;
+        border: none;
+        /* color: rgb(50, 49, 49); */
+        font-size: 15px;
+        background: rgba(255, 251, 251, 0.759);
+    }
 
-        p {
-            color: red;
-            font-size: 16px;
-            margin-top: 4px;
-        }
+    .btn {
+        width: 100%;
+        margin-top: 30px;
+        padding: 10px;
+        background: #2d6ef6;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 25px;
+        font-weight: bold;
+        cursor: pointer;
+    }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    .btn:hover {
+        background: #1f5ae0;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #ffffff;
+    }
+
+    .text {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    a{
+        color: #fff;
+    }
 </style>
 
 <body>
 
     <div class="box">
+        <h1>LOGIN FORM</h1>
         <form id="form">
             <label for="name">Name:</label>
             <input type="text" name="name" placeholder="Enter Your Name">
@@ -81,9 +107,10 @@
             <br>
             <label for="password">Password:</label>
             <input type="password" name="password" placeholder="Enter Your password">
-
             <br>
-            <button class="btn" type="submit">Submit</button>
+            <div class="text"><a  href="#">Forgot Password?</a></div>
+  
+            <button class="btn" type="submit">Log-in</button>
         </form>
     </div>
     <!-- jquery cdn -->
