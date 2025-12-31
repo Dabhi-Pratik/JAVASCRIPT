@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,7 +66,7 @@
 </head>
 
 <body>
-    <div class="box">
+   <div class="box">
         <h2>Login</h2>
 
         <form onsubmit="return checkForm()">
@@ -142,151 +142,4 @@
     </script>
 
 </body>
-
-=======
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Login</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: url("https://c4.wallpaperflare.com/wallpaper/222/361/249/forms-shapes-light-color-wallpaper-preview.jpg") no-repeat center center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .box {
-            width: 350px;
-            padding: 25px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 6px;
-            border-radius: 6px;
-            border:1px solid #d9d9d9;
-            background: rgba(255,255,255,0.6);
-        }
-
-        .btn {
-            width: 100%;
-            margin-top: 20px;
-            padding: 10px;
-            background: #2d6ef6;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        p {
-            color: red;
-            font-size: 16px;
-            margin-top: 4px;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="box">
-        <h2>Login</h2>
-
-        <form onsubmit="return checkForm()">
-            <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Enter Your Name">
-            <p id="e1"></p>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Enter Email">
-            <p id="e2"></p>
-
-            <label for="Password">Password:</label>
-            <input type="password" id="password" placeholder="Enter Password">
-            <p id="e3"></p>
-
-            <button class="btn" type="submit">Login</button>
-
-        </form>
-    </div>
-
-    <script>
-        const checkForm = () => {
-
-            let name = document.getElementById("name").value
-            let email = document.getElementById("email").value
-            let pass = document.getElementById("password").value
-
-
-            // clear messages
-
-            document.getElementById("e1").textContent = ""
-            document.getElementById("e2").textContent = ""
-            document.getElementById("e3").textContent = ""
-
-            let ok = true;
-
-            // NAME VALIDATIONS
-
-            if (name === "") {
-                document.getElementById("e1").textContent = "Name is Required........!";
-                return ok = false;
-            }
-            else if (name.length < 3 && !isNaN(name)) {
-                document.getElementById("e1").textContent = "Name is Invalid......!";
-                return ok = false;
-            }
-            // EMAIL VALIDATIONS
-
-            if (email === "") {
-                document.getElementById("e2").textContent = "Email is Required........!";
-                return ok = false;
-            }
-            else if (!email.includes("@") && !email.includes(".")) {
-                document.getElementById("e2").textContent = "Email is Invalid......!";
-                return ok = false;
-            }
-            // PASSWORD VALIDATIONS
-            if (pass === "") {
-                document.getElementById("e3").textContent = "Password is Required........!";
-                return ok = false;
-            }
-            else if (pass.length < 6) {
-                document.getElementById("e3").textContent = "Password size is 6........!";
-                return ok = false;
-            }
-
-            if (ok) {
-                alert("Form Submitted Successfully.........!")
-            }
-            return ok;
-
-        }
-    </script>
-
-</body>
-
->>>>>>> f3536c4cfe5da1381202e93f9a8329dfbe0672a7
 </html>
