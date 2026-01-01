@@ -21,13 +21,13 @@ $(document).ready(() => {
                 required: "Name is Required..!",
                 minlength: "Minimum 3 Character is Required...!",
             },
-            email:{
-                required:"Email is Required...!",
-                email:"Invalid Email....!",
+            email: {
+                required: "Email is Required...!",
+                email: "Invalid Email....!",
             },
-            password:{
-                required:"Password is Required...!",
-                minlength:"Password must have atLeast 6 Character long Required...!",
+            password: {
+                required: "Password is Required...!",
+                minlength: "Password must have atLeast 6 Character long Required...!",
             },
         }
     })
