@@ -112,16 +112,38 @@ products.forEach((p) => {
     productList.innerHTML += `
      
      <div class=col-md-4 col-sm-12>
-     <div class="card productCard text-center " >
-  <img src="${p.image}" class="card-img-top " alt="${p.name}">
-  <div class="card-body">
-    <h3 class="card-title">${p.name}</h3>
-    <h5>₹${p.price}</h5>
-    <button class="btn btn-primary">Add to Cart</button>
-  </div>
+        <div class="card productCard text-center " >
+            <img src="${p.image}" class="card-img-top " alt="${p.name}">
+                <div class="card-body">
+                <h3 class="card-title">${p.name}</h3>
+                <h5>₹${p.price}</h5>
+        <button class="btn btn-primary" onClick=addItem(${p.id})>Add to Cart</button>
+    </div>
 </div>
 
      </div>
     
     `
 })
+
+const cartItems = JSON.parse(localStorage.getItem("cartData")) || [];
+
+
+const addItem = (id) => {
+    const item = cartItems.find(prod => prod.id === id);
+
+    if (item) {
+        item.qty++;
+    } else {
+        const product = products.find(prod => prod.id === id);
+        cartItems.push({ ...product, qty: 1 });
+    }
+
+    localStorage.setItem("cartData", JSON.stringify(cartItems));
+    console.log(cartItems);
+};
+
+
+
+
+
