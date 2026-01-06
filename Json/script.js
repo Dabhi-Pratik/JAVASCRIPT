@@ -111,13 +111,13 @@ const productList = document.getElementById("productList")
 products.forEach((p) => {
     productList.innerHTML += `
      
-     <div class=col-md-4 col-sm-12>
+     <div class="col-md-4 col-sm-12">
         <div class="card productCard text-center " >
             <img src="${p.image}" class="card-img-top " alt="${p.name}">
                 <div class="card-body">
                 <h3 class="card-title">${p.name}</h3>
                 <h5>₹${p.price}</h5>
-        <button class="btn btn-primary" onClick=addItem(${p.id})>Add to Cart</button>
+        <button class="btn btn-primary" onclick="addItem(${p.id})">Add to Cart</button>
     </div>
 </div>
 
@@ -126,7 +126,7 @@ products.forEach((p) => {
     `
 })
 
-const cartItems = JSON.parse(localStorage.getItem("cartData")) || [];
+let cartItems = JSON.parse(localStorage.getItem("cartData")) || [];
 
 
 const addItem = (id) => {
@@ -140,10 +140,109 @@ const addItem = (id) => {
     }
 
     localStorage.setItem("cartData", JSON.stringify(cartItems));
-    console.log(cartItems);
+   
+    alert("Product Added");
 };
 
+const showCart = () =>{
 
+    cartItems = JSON.parse(localStorage.getItem("cartData")) || [];
+    const productList = document.getElementById("product-list");
+
+    const modal = new bootstrap.Modal(productList);
+
+    modal.show();
+    productData();
+    total();
+}
+
+function productData(){
+
+    const productData = document.getElementById("product-data");
+
+    productData.innerHTML = " ";
+
+    cartItems.forEach((p)=>{
+
+        productData.innerHTML +=`
+        
+        <tr>
+          <td>${p.name}</td>
+          <td>${p.price}</td>
+          <td class="d-flex justify-content-center align-items-center gap-2">
+        <button class="btn btn-secondary btn-sm" onclick="decreaseQty(${p.id})"> - </button>
+        <p>${p.qty}</p>
+        <button class="btn btn-secondary btn-sm" onclick="increaseQty(${p.id})"> + </button>
+        </td>
+        <td>
+        ₹${p.qty * p.price}
+        </td>
+        <td><button class="btn btn-sm btn-danger" onclick="removeItem(${p.id})">Remove</button></td>
+        </tr>
+        `
+    })
+}
+
+const decreaseQty = (id) =>{
+
+    const item = cartItems.find((prod)=>prod.id===id);
+
+    if(item){
+        item.qty--;
+    }
+    if(item.qty === 0){
+        cartItems = cartItems.filter((prod)=>prod.id !== id)
+    }
+
+    updateLocalStorage();
+}
+
+const updateLocalStorage = () =>{
+    localStorage.setItem("cartData",JSON.stringify(cartItems))
+    productData();
+    total();
+}
+
+const increaseQty = (id) =>{
+    const item = cartItems.find((prod)=>prod.id === id);
+
+    if(item){
+        item.qty++;
+    }
+
+    updateLocalStorage();
+}
+
+const removeItem = (id) =>{
+    cartItems = cartItems.filter(prod => prod.id !== id);
+    updateLocalStorage();
+}
+
+const total = () =>{
+    const grandTotal = document.getElementById("grand-total");
+
+    const totalAmount = cartItems.reduce((acc,curr)=>{
+        return acc += curr.price * curr.qty;
+    },0)
+
+    grandTotal.innerHTML = `
+      
+    <h5>Total Amount = ₹${totalAmount}</h5>
+
+    `
+}
+
+const checkOut = () =>{
+    if(cartItems.length === 0){
+        alert("Your cart is empty. Please add items before checkout............!")
+        return;
+    }
+    else{
+        alert("Order Placed SuccessFully......!");
+        cartItems = [];
+        updateLocalStorage();
+    }
+}
 
 
 
